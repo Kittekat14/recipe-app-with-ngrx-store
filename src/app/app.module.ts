@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './rootStore/app.reducer';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -17,6 +19,7 @@ import { CoreModule } from './core.module';
     HttpClientModule,
     SharedModule,
     CoreModule,
+    StoreModule.forRoot(reducers),
   ],
   // Services don't need to be "provided" in other modules when in app.module
   bootstrap: [AppComponent],
